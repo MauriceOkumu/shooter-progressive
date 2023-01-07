@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
-    int score = 1;
-    private void OnCollisionEnter(Collision other)
-    {
-        score = score + 1;
-        Debug.Log("The score is :" + score);
+    TMP_Text scoretext;
+    int score = 0;
+
+    void Start() {
+       scoretext = GetComponent<TMP_Text>();
+       scoretext.text = "START";
     }
+
 }
