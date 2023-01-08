@@ -19,7 +19,6 @@ public class Score : MonoBehaviour
 
     public void updateScore(int amount){
         score = score + amount;
-        Debug.Log(score.ToString());
        
     }
 
