@@ -6,17 +6,19 @@ public class Bomb : MonoBehaviour
 {
     public Score score;
     [SerializeField] ParticleSystem explosion;
-    // RigidBody rb;
-    // float thrust = 100;
+     AudioSource asource;
+
     void Start()
     {
-        score = FindObjectOfType<Score>();
+       asource = GetComponent<AudioSource>();
+       score = FindObjectOfType<Score>();
 
     }
 
     private void OnCollisionEnter(Collision other) {
       score.updateScore(15);
       explosion.Play();
+      asource.Play();
     }
 
     // void ProcessShot()
