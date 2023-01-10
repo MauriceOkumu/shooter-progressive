@@ -29,5 +29,5 @@ public class Shoot : MonoBehaviour
       muzzleFlash.Play();
        if(!asource.isPlaying) asource.PlayOneShot(shotClip);
     }
-    
+
 }

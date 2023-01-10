@@ -5041,6 +5041,7 @@ Transform:
   - {fileID: 2427768063151203152}
   - {fileID: 2427768062507237784}
   - {fileID: 2427768063018340290}
+  - {fileID: 2972062411754674128}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5057,6 +5058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzleFlash: {fileID: 2427768062611335213}
+  shotClip: {fileID: 0}
 --- !u!1 &2427768063151203153
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,3 +5157,34 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &6510506135794724619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2972062411754674128}
+  m_Layer: 0
+  m_Name: Attack point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2972062411754674128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510506135794724619}
+  m_LocalRotation: {x: 0.0078632245, y: -0.016635474, z: 0.62185323, w: 0.7829177}
+  m_LocalPosition: {x: -0.12, y: -2.39, z: -0.02}
+  m_LocalScale: {x: 1.6851755, y: 1.6851755, z: 1.6851753}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2427768063048086835}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
