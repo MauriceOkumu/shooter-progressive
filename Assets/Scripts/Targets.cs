@@ -10,8 +10,8 @@ public class Targets : MonoBehaviour
     AudioSource asource;
     int hit = 0;
     ContactPoint contact;
-         Quaternion rotation;
-         Vector3 position;
+    Quaternion rotation;
+    Vector3 position;
 
     void Start()
     {
@@ -32,6 +32,7 @@ public class Targets : MonoBehaviour
          Instantiate(explosion, position, rotation);
          asource.Play();
         hit++;
+        Destroy(collision.gameObject);
       }
      if(hit > 2) {
         // destroyed.Play();
