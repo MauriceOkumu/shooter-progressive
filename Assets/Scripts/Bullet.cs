@@ -8,8 +8,8 @@ public class Bullet : MonoBehaviour
     public GameObject bullet;
     public Camera topcam;
     public Transform attackPoint;
-    //bullet forrce
-    public float shootForce, upwardForce;
+    //bullet force
+    public float shootForce, upwardForce, xPos = 0.5f,yPos = 0.46f,zPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
 
     private void Shot()
     {
-        Ray ray = topcam.ViewportPointToRay(new Vector3(0.5f, 0.5f,0));
+        Ray ray = topcam.ViewportPointToRay(new Vector3(xPos, yPos, zPos));
         RaycastHit hit;
 
         Vector3 target;
@@ -41,10 +41,8 @@ public class Bullet : MonoBehaviour
 
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
         currentBullet.transform.forward = direction.normalized;
-        Debug.Log(direction.normalized);
-        // -0.98, -0.19, 0.10)
+        
          Debug.Log(direction.normalized * -shootForce);
-         // (9.34, 17.37, -98.04)
 
         //Add force to the bullet
         currentBullet.GetComponent<Rigidbody>().AddForce(direction.normalized * -shootForce, ForceMode.Impulse);
