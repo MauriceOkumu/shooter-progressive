@@ -7,6 +7,8 @@ public class Targets : MonoBehaviour
     public Transform explosion;
     public ParticleSystem destroyed;
     public Transform spawnPoint;
+    public AudioClip destroyedSound;
+    public AudioClip hitSound;
     AudioSource asource;
     int hit = 0;
     ContactPoint contact;
@@ -30,14 +32,17 @@ public class Targets : MonoBehaviour
          rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
          position = contact.point;
          Instantiate(explosion, position, rotation);
-         asource.Play();
+         asource.Stop();
+         asource.PlayOneShot(hitSound);
         hit++;
         Destroy(collision.gameObject);
       }
      if(hit > 2) {
         // destroyed.Play();
         Instantiate(destroyed, spawnPoint.position, Quaternion.identity);
-        Destroy(gameObject);
+        asource.Stop();
+        asource.PlayOneShot(destroyedSound);
+        Destroy(gameObject,.5f);
     }
     }
 }

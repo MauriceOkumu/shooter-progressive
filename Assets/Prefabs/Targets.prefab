@@ -149,6 +149,8 @@ MonoBehaviour:
   explosion: {fileID: 543220153730903747}
   destroyed: {fileID: 1773717674919166021}
   spawnPoint: {fileID: 4238207845104775161}
+  destroyedSound: {fileID: 8300000, guid: 9db6df283fcc949c59d006b93198c7fc, type: 3}
+  hitSound: {fileID: 8300000, guid: a6c077621f46c4ab8a7f61126366c4c0, type: 3}
 --- !u!54 &9054915322123215760
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -175,9 +177,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a6c077621f46c4ab8a7f61126366c4c0, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.69
   m_Pitch: 1
   Loop: 0
   Mute: 0
