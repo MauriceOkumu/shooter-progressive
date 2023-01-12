@@ -7,9 +7,14 @@ public class Mover : MonoBehaviour
     // serialize to access the variable in the editor
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] float turnSpeed = 19.1f;
+    public AudioClip tankClip;
+    public Score score;
+    AudioSource tank;
+    
     void Start()
     {
-       
+       tank = GetComponent<AudioSource>();
+       score = FindObjectOfType<Score>();
     }
 
     void Update()
@@ -21,6 +26,8 @@ public class Mover : MonoBehaviour
     }
     void MoveTank ()
     {
+        // tank.Stop();
+        if(!tank.isPlaying) tank.PlayOneShot(tankClip);
         float roll = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         transform.Translate(roll, 0, 0);
     }
@@ -37,3 +44,4 @@ public class Mover : MonoBehaviour
         }
     }
 }
+// tank sound -> https://freesound.org/s/329800/

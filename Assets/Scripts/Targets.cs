@@ -9,6 +9,8 @@ public class Targets : MonoBehaviour
     public Transform spawnPoint;
     public AudioClip destroyedSound;
     public AudioClip hitSound;
+    public Score score;
+
     AudioSource asource;
     int hit = 0;
     ContactPoint contact;
@@ -18,6 +20,7 @@ public class Targets : MonoBehaviour
     void Start()
     {
          asource = GetComponent<AudioSource>();
+         score = FindObjectOfType<Score>();
     }
     
     private void OnCollisionEnter(Collision collision) {
@@ -32,17 +35,23 @@ public class Targets : MonoBehaviour
          rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
          position = contact.point;
          Instantiate(explosion, position, rotation);
-         asource.Stop();
-         asource.PlayOneShot(hitSound);
+        PlaySound(hitSound);
         hit++;
+        Globals.target_hit++;
+        score.updateScore(Globals.target_hit);
         Destroy(collision.gameObject);
       }
      if(hit > 2) {
         // destroyed.Play();
         Instantiate(destroyed, spawnPoint.position, Quaternion.identity);
-        asource.Stop();
-        asource.PlayOneShot(destroyedSound);
-        Destroy(gameObject,.5f);
+        PlaySound(destroyedSound);
+        Destroy(gameObject,.8f);
+      }
     }
+
+    void PlaySound(AudioClip clip)
+    {
+         asource.Stop();
+         asource.PlayOneShot(hitSound);
     }
 }

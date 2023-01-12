@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    [SerializeField] ParticleSystem muzzleFlash;
-    // [SerializeField] AudioClip shotClip;
-    //  AudioSource asource;
+    public ParticleSystem muzzleFlash;
+    public AudioClip shotClip;
+    AudioSource asource;
     
 
     void Start()
     {
-        //  asource = GetComponent<AudioSource>();
+         asource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -27,7 +27,7 @@ public class Shoot : MonoBehaviour
     private void PlayMuzzleFlash()
     {
       muzzleFlash.Play();
-    //    if(!asource.isPlaying) asource.PlayOneShot(shotClip);
+       if(!asource.isPlaying) asource.PlayOneShot(shotClip);
     }
 
 }
