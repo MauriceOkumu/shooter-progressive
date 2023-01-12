@@ -19,7 +19,7 @@ public class Score : MonoBehaviour
     }
 
     public void updateScore(int amount){
-        score = score + amount;
+        score = amount;
        
     }
 

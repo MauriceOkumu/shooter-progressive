@@ -8,13 +8,11 @@ public class Mover : MonoBehaviour
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] float turnSpeed = 19.1f;
     public AudioClip tankClip;
-    public Score score;
     AudioSource tank;
     
     void Start()
     {
        tank = GetComponent<AudioSource>();
-       score = FindObjectOfType<Score>();
     }
 
     void Update()
