@@ -24,6 +24,7 @@ public class Mover : MonoBehaviour
 
     void MoveTank ()
     {
+            
         if(!tank.isPlaying) tank.PlayOneShot(tankClip);
         float roll = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
         transform.Translate(roll, 0, 0);
@@ -36,7 +37,6 @@ public class Mover : MonoBehaviour
        if (Input.GetKey(KeyCode.LeftArrow))
         {
         transform.Rotate(Vector3.up * -turnSpeed * Time.deltaTime);
-        Debug.Log(Vector3.up * -turnSpeed * Time.deltaTime);
         }
        if (Input.GetKey(KeyCode.RightArrow))
         {
