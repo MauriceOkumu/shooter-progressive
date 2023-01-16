@@ -42,8 +42,6 @@ public class Bullet : MonoBehaviour
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
         currentBullet.transform.forward = direction.normalized;
         
-         Debug.Log(direction.normalized * -shootForce);
-
         //Add force to the bullet
         currentBullet.GetComponent<Rigidbody>().AddForce(direction.normalized * -shootForce, ForceMode.Impulse);
     }

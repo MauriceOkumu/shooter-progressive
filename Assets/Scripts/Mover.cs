@@ -20,25 +20,27 @@ public class Mover : MonoBehaviour
         MoveTank();
         TurnTank();
         
-        
     }
+
     void MoveTank ()
     {
-        // tank.Stop();
         if(!tank.isPlaying) tank.PlayOneShot(tankClip);
-        float roll = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+        float roll = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
         transform.Translate(roll, 0, 0);
+        
     }
 
     void TurnTank ()
     {
-       if (Input.GetKey(KeyCode.UpArrow))
-        {
-        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime);
-        }
-       if (Input.GetKey(KeyCode.DownArrow))
+       
+       if (Input.GetKey(KeyCode.LeftArrow))
         {
         transform.Rotate(Vector3.up * -turnSpeed * Time.deltaTime);
+        Debug.Log(Vector3.up * -turnSpeed * Time.deltaTime);
+        }
+       if (Input.GetKey(KeyCode.RightArrow))
+        {
+        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime);
         }
     }
 }
